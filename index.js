@@ -36,12 +36,16 @@ const createCard = (src, alt, title, price, text) => {
   img.src = src;
   img.alt = alt;
   img.loading = `lazy`;
-  btnGroup.role = `group`;
-  btnGroup.ariaLabel = `User Order`;
+
+  btnGroup.setAttribute("role", "group");
+  btnGroup.setAttribute("aria-label", `Order options for ${title}`);
   btn.type = `button`;
   btn2.type = `button`;
-  anchorLink.href = `#`;
-  anchorLink2.href = `#`;
+
+  btn.setAttribute(`aria-label`, `Order ${title} now`);
+  btn2.setAttribute(`aria-label`, `Add ${title} to whislist`);
+  anchorLink.href = `/order/${title.toLowerCase()}`;
+  anchorLink2.href = `wishlist`;
 
   // CLASSNAME
   article.className = `card`;
