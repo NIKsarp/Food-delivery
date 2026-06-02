@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -18,13 +18,25 @@
       rel="stylesheet"
     />
   </head>
+
   <body>
-    <!-- -------------------------------------------- -->
-    <!-- header -->
-    <header class="header">
-      <!-- -------------------------------------------- -->
-      <div class="header__navbar-brand">
-        <div class="img-box">
+    <!-- -------------------------------- -->
+    <!-- Header Start -->
+    <header
+      itemscope
+      itemtype="https://schema.org/WPHeader"
+      role="banner"
+      class="header"
+    >
+      <!-- -------------------------------- -->
+      <!-- Header: Brand -->
+
+      <div
+        itemscope
+        itemtype="https://schema.org/Organization"
+        class="header__navbar-brand"
+      >
+        <div class="figure">
           <img
             src="https://cdn3d.iconscout.com/3d/premium/thumb/fast-food-shop-8394648-6666271.png"
             alt="header__logo"
@@ -32,40 +44,94 @@
         </div>
         <h2 class="header__logo">Prashant food.com</h2>
       </div>
-      <!-- -------------------------------------------- -->
-      <nav class="header__navbar">
-        <ul class="header__navbar-nav">
-          <li class="header__nav-item">
-            <a href="#" class="header__nav-link">HOME</a>
+
+      <!-- -------------------------------- -->
+      <!-- Header: Navbar -->
+
+      <nav
+        itemscope
+        itemtype="https://schema.org/SiteNavigationElement"
+        role="navigation"
+        aria-label="Main Navigation"
+        id="navbar"
+        class="navbar"
+      >
+        <ul class="navbar-nav">
+          <li itemprop="name" class="navbar__nav-item">
+            <a
+              itemprop="url"
+              href="/"
+              aria-current="page"
+              class="navbar__nav-link"
+              title="Home page"
+              >HOME</a
+            >
           </li>
-          <li class="header__nav-item">
-            <a href="#" class="header__nav-link">BLOG</a>
+          <li itemprop="name" class="navbar__nav-item">
+            <a
+              itemprop="url"
+              href="/services"
+              class="navbar__nav-link"
+              title="Our services"
+              >SERVICES</a
+            >
           </li>
-          <li class="header__nav-item">
-            <a href="#" class="header__nav-link">SERVICES</a>
+          <li itemprop="name" class="navbar__nav-item">
+            <a
+              itemprop="url"
+              href="/about"
+              class="navbar__nav-link"
+              title="About our company"
+              >ABOUT US</a
+            >
           </li>
-          <li class="header__nav-item">
-            <a href="#" class="header__nav-link">ABOUT US</a>
-          </li>
-          <li class="header__nav-item">
-            <a href="#" class="header__nav-link">CONTACT US</a>
+          <li itemprop="name" class="navbar__nav-item">
+            <a
+              itemprop="url"
+              href="/contact"
+              class="navbar__nav-link"
+              title="Contact information"
+              >CONTACT US</a
+            >
           </li>
         </ul>
       </nav>
-      <!-- -------------------------------------------- -->
-      <div class="header__btn-group">
-        <button type="button" class="header__btn">Login</button>
-        <button type="button" class="header__btn">Signup</button>
+
+      <!-- -------------------------------- -->
+      <!-- Header: Btn-Group -->
+
+      <div
+        role="group"
+        aria-label="User Authentication"
+        class="header__btn-group"
+      >
+        <button
+          type="button"
+          aria-label="Login to your account"
+          class="header__btn"
+        >
+          Login
+        </button>
+        <button
+          type="button"
+          aria-label="Create new account"
+          class="header__btn"
+        >
+          Signup
+        </button>
       </div>
     </header>
-    <!-- -------------------------------------------- -->
-    <!-- Landpage -->
+
+    <!-- Header End -->
+    <!-- -------------------------------- -->
+    <!-- Landpage Start -->
+
     <section class="block">
       <div class="front-page">
         <div class="left-box">
           <h2 class="title">
             <span class="boxing">
-              <div class="img-box">
+              <div class="figure">
                 <img
                   src="https://cdn3d.iconscout.com/3d/premium/thumb/food-delivery-6352294-5229853.png"
                   alt="boxing"
@@ -85,7 +151,7 @@
           </div>
         </div>
         <div class="right-box">
-          <div class="img-box">
+          <div class="figure">
             <!-- <img
               src="https://cdn-icons-png.flaticon.com/512/5162/5162780.png"
               alt="delivery boy"
@@ -98,11 +164,17 @@
         </div>
       </div>
     </section>
-    <!-- -------------------------------------------- -->
-    <!-- Block -->
+
+    <!-- Landpage End-->
+    <!-- -------------------------------- -->
+    <!-- Block Start -->
+
     <section class="block">
       <div class="hero__section">
-        <h3 class="hero__title">Anything you want <span class="hero__title--highlight">delicious...</span></h3>
+        <h3 class="hero__title">
+          Anything you want
+          <span class="hero__title--highlight">delicious...</span>
+        </h3>
         <div class="hero__items">
           <figure class="hero__figure">
             <img
@@ -135,257 +207,222 @@
         </div>
       </div>
     </section>
-    <!-- -------------------------------------------- -->
-    <!-- Card-group -->
+
+    <!-- Block End -->
+    <!-- -------------------------------- -->
+    <!-- Card-group Start -->
+
     <div class="block">
-      <div id="cards" class="card-group">
-        <div class="card">
-          <div class="img-box">
-            <!-- <img
-              src="https://th.bing.com/th/id/R.c07a3ca111fcd565f5e470a7627e630c?rik=xAI9PPbtb06FuA&riu=http%3a%2f%2fpluspng.com%2fimg-png%2fpng-hd-pizza-pizza-png-1538.png&ehk=eQaoh0abtf2UrAF9SnLYKG%2foa36maezHutx44uP%2bXpw%3d&risl=&pid=ImgRaw&r=0"
-              class="card__img-top"
-              alt="pizza"
-            /> -->
-            <img
-              src="https://th.bing.com/th/id/R.c07a3ca111fcd565f5e470a7627e630c?rik=xAI9PPbtb06FuA&riu=http%3a%2f%2fpluspng.com%2fimg-png%2fpng-hd-pizza-pizza-png-1538.png&ehk=eQaoh0abtf2UrAF9SnLYKG%2foa36maezHutx44uP%2bXpw%3d&risl=&pid=ImgRaw&r=0"
-              class="card__img-top"
-              alt="pizza"
-            />
-          </div>
-          <div class="card__body">
-            <h3 class="card__title">Pizza</h3>
-            <h3 class="card__price">$ 299</h3>
-            <p class="card__text">
-              Pizza, originating from Italy, is a delightful dish that has
-              captured hearts worldwide. It consists of a thin, round base made
-              from leavened wheat-based dough.
-            </p>
-            <div class="card__btn-group">
-              <button type="button" class="btn card__btn">
-                <a href="#" class="card__link">Order Now!</a>
-              </button>
-              <button type="button" class="btn card__btn">
-                <a href="#" class="card__link">Add to whislist</a>
-              </button>
-            </div>
-          </div>
-        </div>
-        <div class="card">
-          <div class="img-box">
-            <img
-              src="https://th.bing.com/th/id/R.71b1311c4068239ca265cf7f5adcc9fa?rik=aUOxD6h0xE4yxA&riu=http%3a%2f%2fwww.pngall.com%2fwp-content%2fuploads%2f2016%2f05%2fBurger-Free-Download-PNG.png&ehk=D00joxClVX430Ov4HQkweUPKTfcewxvA8wz72NyOies%3d&risl=1&pid=ImgRaw&r=0"
-              class="card__img-top"
-              alt="burger"
-            />
-          </div>
-          <div class="card__body">
-            <h3 class="card__title">Burger</h3>
-            <h3 class="card__price">$ 50</h3>
-            <p class="card__text">
-              A burger is a delicious food item that consists of
-              fillings—usually a patty of ground meat, typically beef—placed
-              inside a sliced bun or bread roll12. It’s a popular choice for a
-              quick and satisfying meal!
-            </p>
-            <div class="card__btn-group">
-              <button type="button" class="btn card__btn">
-                <a href="#" class="card__link">Order Now!</a>
-              </button>
-              <button type="button" class="btn card__btn">
-                <a href="#" class="card__link">Add to whislist</a>
-              </button>
-            </div>
-          </div>
-        </div>
-        <div class="card">
-          <div class="img-box">
-            <img
-              src="https://www.cookingpitara.com/wp-content/uploads/2021/01/Momos-Recipe.png"
-              class="card__img-top"
-              alt="momos"
-            />
-          </div>
-          <div class="card__body">
-            <h3 class="card__title">Momos</h3>
-            <h3 class="card__price">$ 20</h3>
-            <p class="card__text">
-              Momos are a delightful treat found in Tibetan, Nepali, and
-              Bhutanese cuisines, as well as in various parts of India. These
-              steamed or fried dumplings are filled with a savory mixture of
-              ingredients.
-            </p>
-            <div class="card__btn-group">
-              <button type="button" class="btn card__btn">
-                <a href="#" class="card__link">Order Now!</a>
-              </button>
-              <button type="button" class="btn card__btn">
-                <a href="#" class="card__link">Add to whislist</a>
-              </button>
-            </div>
-          </div>
-        </div>
-        <div class="card">
-          <div class="img-box">
-            <img
-              src="https://static.vecteezy.com/system/resources/previews/025/269/568/non_2x/samosa-with-ai-generated-free-png.png"
-              class="card__img-top"
-              alt="samosa"
-            />
-          </div>
-          <div class="card__body">
-            <h3 class="card__title">Samosa</h3>
-            <h3 class="card__price">$ 12</h3>
-            <p class="card__text">
-              Samosa has been a popular food of the Indian subcontinent for
-              centuries. It is assumed that it comes from Central Asia before
-              the 10th century.
-            </p>
-            <div class="card__btn-group">
-              <button type="button" class="btn card__btn">
-                <a href="#" class="card__link">Order Now!</a>
-              </button>
-              <button type="button" class="btn card__btn">
-                <a href="#" class="card__link">Add to whislist</a>
-              </button>
-            </div>
-          </div>
-        </div>
-        <div class="card">
-          <div class="img-box">
-            <img
-              src="https://static.vecteezy.com/system/resources/previews/027/144/745/original/gujarati-khaman-dhokla-isolated-on-transparent-background-png.png"
-              class="card__img-top"
-              alt="dhokla"
-            />
-          </div>
-          <div class="card__body">
-            <h3 class="card__title">Dhokla</h3>
-            <h3 class="card__price">$ 29</h3>
-            <p class="card__text">
-              Dhokla is a common meal in many households but we undermine its
-              ability as a superfood. It has all the macronutrients required by
-              humans.
-            </p>
-            <div class="card__btn-group">
-              <button type="button" class="btn card__btn">
-                <a href="#" class="card__link">Order Now!</a>
-              </button>
-              <button type="button" class="btn card__btn">
-                <a href="#" class="card__link">Add to whislist</a>
-              </button>
-            </div>
-          </div>
-        </div>
-        <div class="card">
-          <div class="img-box">
-            <img
-              src="https://png.pngtree.com/png-vector/20231001/ourmid/pngtree-indian-jalebi-sweet-deep-png-image_10133866.png"
-              class="card__img-top"
-              alt="jalebi"
-            />
-          </div>
-          <div class="card__body">
-            <h3 class="card__title">Jalebi</h3>
-            <h3 class="card__price">$ 9</h3>
-            <p class="card__text">
-              Jalebi is a popular sweet snack in South Asia, the Middle East,
-              Africa and Mauritius. It goes by many names, including jilapi,
-              zelepi, jilebi, jilipi, zulbia, jerry, mushabak, z’labia, zengoula
-              or zalabia.
-            </p>
-            <div class="card__btn-group">
-              <button type="button" class="btn card__btn">
-                <a href="#" class="card__link">Order Now!</a>
-              </button>
-              <button type="button" class="btn card__btn">
-                <a href="#" class="card__link">Add to whislist</a>
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
+      <div id="cards" class="card-group"></div>
     </div>
-    <!-- -------------------------------------------- -->
-    <!-- footer -->
-    <footer class="footer">
+
+    <!-- Card-group End -->
+    <!-- -------------------------------- -->
+    <!-- Footer Start -->
+
+    <footer
+      itemscope
+      itemtype="https://schema.org/WPFooter"
+      role="contentinfo"
+      class="footer"
+    >
       <div class="container">
         <div class="footer__row">
           <div class="footer__col">
             <h5 class="footer__title">Quick Links</h5>
             <ul class="footer__menu">
-              <li class="footer__item">
-                <a href="#" class="footer__link">Home</a>
+              <li itemprop="name" class="footer__item">
+                <a
+                  itemprop="url"
+                  href="/"
+                  aria-label="Home"
+                  class="footer__link"
+                  title="Return to homepage"
+                  >Home</a
+                >
               </li>
-              <li class="footer__item">
-                <a href="#" class="footer__link">About us</a>
+              <li itemprop="name" class="footer__item">
+                <a
+                  itemprop="url"
+                  href="/about"
+                  aria-label="About Us"
+                  class="footer__link"
+                  title="Learn about our company"
+                  >About Us</a
+                >
               </li>
-              <li class="footer__item">
-                <a href="#" class="footer__link">Contact us</a>
+              <li itemprop="name" class="footer__item">
+                <a
+                  itemprop="url"
+                  href="/contact"
+                  aria-label="Contact Us"
+                  class="footer__link"
+                  title="Get in touch with us"
+                  >Contact Us</a
+                >
               </li>
             </ul>
           </div>
           <div class="footer__col">
             <h5 class="footer__title">Manage your Account</h5>
             <ul class="footer__menu">
-              <li class="footer__item">
-                <a href="#" class="footer__link">Settings</a>
+              <li itemprop="name" class="footer__item">
+                <a
+                  itemprop="url"
+                  href="/settings"
+                  aria-label="Account Settings"
+                  class="footer__link"
+                  title="Manage your account settings"
+                  >Settings</a
+                >
               </li>
-              <li class="footer__item">
-                <a href="#" class="footer__link">Services</a>
+              <li itemprop="name" class="footer__item">
+                <a
+                  itemprop="url"
+                  href="/services"
+                  class="footer__link"
+                  aria-label="Our Services"
+                  title="Explore our services"
+                  >Services</a
+                >
               </li>
-              <li class="footer__item">
-                <a href="#" class="footer__link">Your account</a>
+              <li itemprop="name" class="footer__item">
+                <a
+                  itemprop="url"
+                  href="/account"
+                  aria-label="Your Account"
+                  class="footer__link"
+                  title="Manage your personal account"
+                  >Your Account</a
+                >
               </li>
             </ul>
           </div>
           <div class="footer__col">
             <h5 class="footer__title">Company</h5>
             <ul class="footer__menu">
-              <li class="footer__item">
-                <a href="#" class="footer__link">Projects</a>
+              <li itemprop="name" class="footer__item">
+                <a
+                  itemprop="url"
+                  href="/projects"
+                  aria-label="Our Projects"
+                  class="footer__link"
+                  title="View our current projects"
+                  >Projects</a
+                >
               </li>
-              <li class="footer__item">
-                <a href="#" class="footer__link">Portfolio</a>
+              <li itemprop="name" class="footer__item">
+                <a
+                  itemprop="url"
+                  href="/portfolio"
+                  aria-label="Company Portfolio"
+                  class="footer__link"
+                  title="Browse our portfolio"
+                  >Portfolio</a
+                >
               </li>
-              <li class="footer__item">
-                <a href="#" class="footer__link">Programs</a>
+              <li itemprop="name" class="footer__item">
+                <a
+                  itemprop="url"
+                  href="/programs"
+                  aria-label="Company Programs"
+                  class="footer__link"
+                  title="Learn about our programs"
+                  >Programs</a
+                >
               </li>
             </ul>
           </div>
           <div class="footer__col">
             <h5 class="footer__title">Connect with us</h5>
-            <ul class="footer__menu">
-              <li class="footer__item">
-                <a href="#" class="footer__link">Twitter</a>
+            <ul
+              itemscope
+              itemtype="https://schema.org/Organization"
+              class="footer__menu"
+            >
+              <li itemprop="name" class="footer__item">
+                <a
+                  itemprop="sameAs"
+                  href="https://twitter.com/example"
+                  rel="noopener noreferrer"
+                  aria-label="Twitter profile"
+                  class="footer__link"
+                  title="Follow us on Twitter"
+                  >Twitter</a
+                >
               </li>
-              <li class="footer__item">
-                <a href="#" class="footer__link">LinkedIn</a>
+              <li itemprop="name" class="footer__item">
+                <a
+                  itemprop="sameAs"
+                  href="https://linkedin.com/company/example"
+                  rel="noopener noreferrer"
+                  aria-label="LinkedIn profile"
+                  class="footer__link"
+                  title="Connect with us on LinkedIn"
+                  >Linkedin</a
+                >
               </li>
-              <li class="footer__item">
-                <a href="#" class="footer__link">Facebook</a>
+              <li itemprop="name" class="footer__item">
+                <a
+                  itemprop="sameAs"
+                  href="https://facebook.com/example"
+                  rel="noopener noreferrer"
+                  aria-label="Facebook page"
+                  class="footer__link"
+                  title="Like us on Facebook"
+                  >Facebook</a
+                >
               </li>
             </ul>
           </div>
         </div>
+
+        <!-- -------------------------------- -->
+        <!-- Footer: Second-Row -->
+
         <div class="footer__second-row">
           <div class="footer__content">
-            <p class="copyright">
-              <span>Copyright</span> &copy;
-              <span id="currentYear"></span> Prashant Ltd. | All Rights Reserved
+            <p itemprop="copyrightNotice" class="copyright">
+              Copyright &copy;
+              <span id="currentYear"></span
+              ><span
+                itemscope
+                itemtype="https://schema.org/Organization"
+                itemprop="copyrightHolder"
+              >
+                <span itemprop="name"> Prashant food.com PVT. LTD.</span></span
+              >
+              | All Rights Reserved
             </p>
           </div>
           <ul class="footer__menu">
-            <li class="footer__item">
-              <a href="#" class="footer__link">Privacy Policy</a>
+            <li itemprop="name" class="footer__item">
+              <a
+                itemprop="url"
+                href="/privacy"
+                aria-label="Privacy Policy"
+                class="footer__link"
+                title="Read our privacy policy"
+                >Privacy Policy</a
+              >
             </li>
-            <li class="footer__item">
-              <a href="#" class="footer__link">Terms & Conditions</a>
+            <li itemprop="name" class="footer__item">
+              <a
+                itemprop="url"
+                href="/terms"
+                aria-label="Terms and Conditions"
+                class="footer__link"
+                title="Review our terms and conditions"
+                >Terms & Conditions</a
+              >
             </li>
           </ul>
         </div>
       </div>
     </footer>
-    <!-- -------------------------------------------- -->
+
+    <!-- Footer End -->
+    <!-- -------------------------------- -->
   </body>
   <script src="index.js"></script>
 </html>
