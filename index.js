@@ -29,8 +29,8 @@ const createCard = (src, alt, title, price, text) => {
   const btnGroup = createElement(`div`);
   const btn = createElement(`button`);
   const btn2 = createElement(`button`);
-  const a = createElement(`a`, `Order Now!`);
-  const a2 = createElement(`a`, `Add to whislist`);
+  const anchorLink = createElement(`a`, `Order Now!`);
+  const anchorLink2 = createElement(`a`, `Add to whislist`);
 
   // ATTRIBUTES
   img.src = src;
@@ -40,8 +40,8 @@ const createCard = (src, alt, title, price, text) => {
   btnGroup.ariaLabel = `User Order`;
   btn.type = `button`;
   btn2.type = `button`;
-  a.href = `#`;
-  a2.href = `#`;
+  anchorLink.href = `#`;
+  anchorLink2.href = `#`;
 
   // CLASSNAME
   article.className = `card`;
@@ -54,8 +54,8 @@ const createCard = (src, alt, title, price, text) => {
   btnGroup.className = `card__btn-group`;
   btn.className = `card__btn`;
   btn2.className = `card__btn`;
-  a.className = `card__link`;
-  a2.className = `card__link`;
+  anchorLink.className = `card__link`;
+  anchorLink2.className = `card__link`;
 
   // APPEND ELEMENTS
   // article.append(img, h2, p);
@@ -66,8 +66,8 @@ const createCard = (src, alt, title, price, text) => {
   // h2.append(h3);
   div.append(h2, h3, p, btnGroup);
   btnGroup.append(btn, btn2);
-  btn.appendChild(a);
-  btn2.appendChild(a2);
+  btn.appendChild(anchorLink);
+  btn2.appendChild(anchorLink2);
 
   return section;
 };
