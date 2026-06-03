@@ -558,6 +558,115 @@ p {
 
 /* Card-group End */
 /* -------------------------------- */
+/* FAQ Start */
+
+.faq__section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.faq__title {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.faq__container {
+  width: 100%;
+  max-width: 48rem;
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+}
+
+.faq__item {
+  border-radius: 1.125rem;
+  border: none;
+  border-top: 3px solid #ffffff30;
+  border-left: 3px solid #ffffff30;
+  background-color: #fffffe40;
+  backdrop-filter: blur(1rem) saturate(180%);
+  overflow: hidden;
+}
+
+.faq__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.125rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background-color: transparent;
+  border: none;
+  width: 100%;
+  text-align: left;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: 1.125rem;
+  color: var(--white);
+}
+
+.faq__header:hover {
+  background-color: #ffffff10;
+}
+
+.faq__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  font-size: 1.5rem;
+  transition: transform 0.3s ease;
+}
+
+.faq__content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  padding: 0 1.125rem;
+}
+
+.faq__text {
+  padding: 0.75rem 0;
+  color: var(--black);
+  font-size: 1rem;
+}
+
+.faq__item.active .faq__icon {
+  transform: rotate(180deg);
+}
+
+.faq__item.active .faq__content {
+  max-height: 500px;
+  padding: 0.75rem 1.125rem 1.125rem 1.125rem;
+}
+
+@media only screen and (max-width: 768px) {
+  .faq__title {
+    font-size: 2rem;
+  }
+
+  .faq__container {
+    max-width: 100%;
+    padding: 0 1rem;
+  }
+}
+
+@media only screen and (max-width: 517px) {
+  .faq__title {
+    font-size: 1.5rem;
+  }
+
+  .faq__header {
+    font-size: 1rem;
+  }
+}
+
+/* FAQ End */
+/* -------------------------------- */
 /* Footer Start */
 
 .footer {

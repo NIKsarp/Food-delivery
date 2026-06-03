@@ -141,3 +141,81 @@ createCard(
 
 // currentYear End
 // --------------------------------
+// createFAQ() Function Start
+
+const createFAQ = (question, answer) => {
+  const container = document.getElementById(`faq-container`);
+
+  // ELEMENTS
+  const item = createElement(`div`);
+  const header = createElement(`button`);
+  const questionText = createElement(`span`, question);
+  const icon = createElement(`span`, `▼`);
+  const content = createElement(`div`);
+  const answer_text = createElement(`p`, answer);
+
+  // ATTRIBUTES
+  header.type = `button`;
+  header.setAttribute(`aria-label`, `Toggle FAQ: ${question}`);
+  header.setAttribute(`aria-expanded`, `false`);
+
+  // CLASSNAME
+  item.className = `faq__item`;
+  header.className = `faq__header`;
+  questionText.className = `faq__question`;
+  icon.className = `faq__icon`;
+  content.className = `faq__content`;
+  answer_text.className = `faq__text`;
+
+  // EVENT LISTENER
+  header.addEventListener(`click`, () => {
+    item.classList.toggle(`active`);
+    const isActive = item.classList.contains(`active`);
+    header.setAttribute(`aria-expanded`, isActive);
+  });
+
+  // APPEND ELEMENTS
+  container.appendChild(item);
+  item.append(header, content);
+  header.append(questionText, icon);
+  content.appendChild(answer_text);
+
+  return container;
+};
+
+// createFAQ() Function End
+// --------------------------------
+// FAQ-group Start
+
+createFAQ(
+  `How do I place an order?`,
+  `Placing an order is easy! Browse through our menu, select your favorite items, add them to your cart, and proceed to checkout. Fill in your delivery address and payment details, and your order will be on its way!`,
+);
+
+createFAQ(
+  `What are your delivery times?`,
+  `We deliver within 30-45 minutes in most areas. Delivery times may vary based on your location and order complexity. You can track your order in real-time through our app or website.`,
+);
+
+createFAQ(
+  `Do you offer vegetarian options?`,
+  `Yes! We have a wide variety of vegetarian dishes available. You can filter our menu by dietary preferences to find all vegetarian, vegan, and other dietary options.`,
+);
+
+createFAQ(
+  `What payment methods do you accept?`,
+  `We accept all major credit cards, debit cards, digital wallets, and cash on delivery in select areas. Your payment information is secure and encrypted.`,
+);
+
+createFAQ(
+  `Can I cancel or modify my order?`,
+  `You can cancel or modify your order within 2 minutes of placing it. After that, the order goes to the restaurant for preparation. Contact our support team for assistance.`,
+);
+
+createFAQ(
+  `Is there a minimum order value?`,
+  `The minimum order value is $10. However, this may vary by location and restaurant. Free delivery is available on orders above $25 in most areas.`,
+);
+
+// FAQ-group End
+// --------------------------------
