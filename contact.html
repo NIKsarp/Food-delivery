@@ -1,0 +1,725 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="author" content="Prashant Rastogi" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us - Food Delivery.com</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="icon"
+      href="https://cdn3d.iconscout.com/3d/premium/thumb/food-and-drink-5727926-4800418.png?f=webp"
+      type="image/x-icon"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      .contact__section {
+        max-width: 1000px;
+        margin: 0 auto;
+      }
+
+      .contact__title {
+        font-size: clamp(2rem, 5vw, 3.5rem);
+        color: var(--white);
+        text-align: center;
+        margin: 2rem 0;
+      }
+
+      .contact__subtitle {
+        text-align: center;
+        font-size: clamp(1rem, 2vw, 1.25rem);
+        color: var(--black);
+        margin-bottom: 3rem;
+      }
+
+      .contact__container {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      @media only screen and (min-width: 768px) {
+        .contact__container {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+
+      .contact__info-card {
+        background-color: #fffffe40;
+        border-top: 3px solid #ffffff30;
+        border-left: 3px solid #ffffff30;
+        backdrop-filter: blur(1rem) saturate(180%);
+        border-radius: 1rem;
+        padding: clamp(1.5rem, 4vw, 2.5rem);
+      }
+
+      .contact__info-title {
+        font-size: 1.5rem;
+        color: var(--white);
+        margin-bottom: 1.5rem;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+      }
+
+      .contact__info-item {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .contact__info-label {
+        color: #ffff00;
+        font-weight: 700;
+        font-size: 0.95rem;
+      }
+
+      .contact__info-value {
+        color: var(--black);
+        font-size: 1rem;
+        line-height: 1.6;
+      }
+
+      .contact__info-value a {
+        color: #ff6b35;
+        text-decoration: none;
+        transition: all 0.3s ease;
+      }
+
+      .contact__info-value a:hover {
+        text-decoration: underline;
+      }
+
+      .contact__form {
+        background-color: #fffffe40;
+        border-top: 3px solid #ffffff30;
+        border-left: 3px solid #ffffff30;
+        backdrop-filter: blur(1rem) saturate(180%);
+        border-radius: 1rem;
+        padding: clamp(1.5rem, 4vw, 2.5rem);
+      }
+
+      @media only screen and (min-width: 768px) {
+        .contact__form {
+          grid-column: 1 / -1;
+        }
+      }
+
+      .contact__form h3 {
+        font-size: 1.75rem;
+        color: var(--white);
+        margin-bottom: 1.5rem;
+      }
+
+      .form__group {
+        margin-bottom: 1.5rem;
+      }
+
+      .form__label {
+        display: block;
+        margin-bottom: 0.5rem;
+        color: var(--black);
+        font-weight: 700;
+        font-size: 1rem;
+      }
+
+      .form__input,
+      .form__textarea {
+        width: 100%;
+        padding: clamp(0.75rem, 1.5vw, 1rem);
+        border: 2px solid #ffffff30;
+        border-radius: 0.5rem;
+        background-color: #ffffff90;
+        font-family: "Poppins", sans-serif;
+        font-size: 1rem;
+        color: var(--black);
+        transition: all 0.3s ease;
+      }
+
+      .form__input:focus,
+      .form__textarea:focus {
+        outline: none;
+        border-color: #ff6b35;
+        background-color: var(--white);
+        box-shadow: 0 0 10px rgba(255, 94, 7, 0.3);
+      }
+
+      .form__textarea {
+        resize: vertical;
+        min-height: 150px;
+      }
+
+      .form__btn {
+        background-image: linear-gradient(to top left, yellow, orange);
+        border: none;
+        padding: 1rem 2rem;
+        border-radius: 0.5rem;
+        cursor: pointer;
+        font-weight: 700;
+        font-size: 1.05rem;
+        transition: all 0.3s ease;
+        width: 100%;
+      }
+
+      .form__btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(255, 94, 7, 0.4);
+      }
+
+      .form__btn:active {
+        transform: translateY(-1px);
+      }
+
+      .contact__success {
+        display: none;
+        background-color: #90ee90;
+        border-radius: 0.5rem;
+        padding: 1.5rem;
+        margin-top: 1rem;
+        text-align: center;
+        font-weight: 700;
+        color: var(--black);
+      }
+
+      .contact__error {
+        display: none;
+        background-color: #ffb6c6;
+        border-radius: 0.5rem;
+        padding: 1.5rem;
+        margin-top: 1rem;
+        text-align: center;
+        font-weight: 700;
+        color: var(--black);
+      }
+
+      .back__btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem 1.5rem;
+        margin: 2rem 0;
+        background-image: linear-gradient(to top left, yellow, orange);
+        border: none;
+        border-radius: 0.5rem;
+        cursor: pointer;
+        font-weight: 700;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        color: var(--black);
+      }
+
+      .back__btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(255, 94, 7, 0.4);
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- -------------------------------- -->
+    <!-- Header Start -->
+    <header
+      itemscope
+      itemtype="https://schema.org/WPHeader"
+      role="banner"
+      class="header"
+    >
+      <div
+        itemscope
+        itemtype="https://schema.org/Organization"
+        class="header__navbar-brand"
+      >
+        <div class="figure">
+          <img
+            src="https://cdn3d.iconscout.com/3d/premium/thumb/fast-food-shop-8394648-6666271.png"
+            alt="header__logo"
+          />
+        </div>
+        <a href="index.html" class="header__logo" style="cursor: pointer"
+          >Food Delivery.com</a
+        >
+      </div>
+
+      <nav
+        itemscope
+        itemtype="https://schema.org/SiteNavigationElement"
+        role="navigation"
+        aria-label="Main Navigation"
+        id="navbar"
+        class="navbar"
+      >
+        <ul class="navbar-nav">
+          <li itemprop="name" class="navbar__nav-item">
+            <a
+              itemprop="url"
+              href="index.html"
+              class="navbar__nav-link"
+              title="Home page"
+              >HOME</a
+            >
+          </li>
+          <li itemprop="name" class="navbar__nav-item">
+            <a
+              itemprop="url"
+              href="contact.html"
+              class="navbar__nav-link"
+              title="Contact us"
+              >CONTACT</a
+            >
+          </li>
+          <li itemprop="name" class="navbar__nav-item">
+            <a
+              itemprop="url"
+              href="privacy.html"
+              class="navbar__nav-link"
+              title="Privacy Policy"
+              >PRIVACY</a
+            >
+          </li>
+        </ul>
+      </nav>
+
+      <div
+        role="group"
+        aria-label="User Authentication"
+        class="header__btn-group"
+      >
+        <button
+          type="button"
+          aria-label="Login to your account"
+          class="header__btn"
+        >
+          Login
+        </button>
+        <button
+          type="button"
+          aria-label="Create new account"
+          class="header__btn"
+        >
+          Signup
+        </button>
+      </div>
+    </header>
+
+    <!-- Header End -->
+    <!-- -------------------------------- -->
+    <!-- Contact Section Start -->
+
+    <section class="block">
+      <div class="contact__section">
+        <h1 class="contact__title">Get In <span class="design">Touch</span></h1>
+        <p class="contact__subtitle">
+          We'd love to hear from you. Send us a message and we'll respond as
+          soon as possible.
+        </p>
+
+        <div class="contact__container">
+          <!-- Contact Info Cards -->
+          <div class="contact__info-card">
+            <h3 class="contact__info-title">📍 Address</h3>
+            <div class="contact__info-item">
+              <span class="contact__info-value"
+                >123 Food Street, Delivery City, DC 12345, USA</span
+              >
+            </div>
+          </div>
+
+          <div class="contact__info-card">
+            <h3 class="contact__info-title">📞 Phone</h3>
+            <div class="contact__info-item">
+              <span class="contact__info-label">Main:</span>
+              <span class="contact__info-value"
+                ><a href="tel:+18008008008">+1 (800) 800-8008</a></span
+              >
+            </div>
+            <div class="contact__info-item">
+              <span class="contact__info-label">Support:</span>
+              <span class="contact__info-value"
+                ><a href="tel:+18008008009">+1 (800) 800-8009</a></span
+              >
+            </div>
+          </div>
+
+          <div class="contact__info-card">
+            <h3 class="contact__info-title">✉️ Email</h3>
+            <div class="contact__info-item">
+              <span class="contact__info-label">General:</span>
+              <span class="contact__info-value"
+                ><a href="mailto:info@fooddelivery.com"
+                  >info@fooddelivery.com</a
+                ></span
+              >
+            </div>
+            <div class="contact__info-item">
+              <span class="contact__info-label">Support:</span>
+              <span class="contact__info-value"
+                ><a href="mailto:support@fooddelivery.com"
+                  >support@fooddelivery.com</a
+                ></span
+              >
+            </div>
+          </div>
+
+          <div class="contact__info-card">
+            <h3 class="contact__info-title">🕐 Hours</h3>
+            <div class="contact__info-item">
+              <span class="contact__info-label">Monday - Friday:</span>
+              <span class="contact__info-value">9:00 AM - 6:00 PM</span>
+            </div>
+            <div class="contact__info-item">
+              <span class="contact__info-label">Saturday:</span>
+              <span class="contact__info-value">10:00 AM - 4:00 PM</span>
+            </div>
+            <div class="contact__info-item">
+              <span class="contact__info-label">Sunday:</span>
+              <span class="contact__info-value">Closed</span>
+            </div>
+          </div>
+
+          <!-- Contact Form -->
+          <form id="contactForm" class="contact__form">
+            <h3>Send us a Message</h3>
+
+            <div class="form__group">
+              <label for="name" class="form__label">Full Name *</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                class="form__input"
+                placeholder="Your name"
+                required
+              />
+            </div>
+
+            <div class="form__group">
+              <label for="email" class="form__label">Email Address *</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                class="form__input"
+                placeholder="your@email.com"
+                required
+              />
+            </div>
+
+            <div class="form__group">
+              <label for="phone" class="form__label">Phone Number</label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                class="form__input"
+                placeholder="+1 (800) 000-0000"
+              />
+            </div>
+
+            <div class="form__group">
+              <label for="subject" class="form__label">Subject *</label>
+              <input
+                type="text"
+                id="subject"
+                name="subject"
+                class="form__input"
+                placeholder="How can we help?"
+                required
+              />
+            </div>
+
+            <div class="form__group">
+              <label for="message" class="form__label">Message *</label>
+              <textarea
+                id="message"
+                name="message"
+                class="form__textarea"
+                placeholder="Please tell us more..."
+                required
+              ></textarea>
+            </div>
+
+            <button type="submit" class="form__btn">Send Message</button>
+            <div id="successMsg" class="contact__success">
+              ✓ Message sent successfully! We'll get back to you soon.
+            </div>
+            <div id="errorMsg" class="contact__error">
+              ✗ Error sending message. Please try again later.
+            </div>
+          </form>
+        </div>
+
+        <a href="index.html" class="back__btn">← Back to Home</a>
+      </div>
+    </section>
+
+    <!-- Contact Section End -->
+    <!-- -------------------------------- -->
+    <!-- Footer Start -->
+
+    <footer
+      itemscope
+      itemtype="https://schema.org/WPFooter"
+      role="contentinfo"
+      class="footer"
+    >
+      <div class="container">
+        <div class="footer__row">
+          <div class="footer__col">
+            <h5 class="footer__title">Quick Links</h5>
+            <ul class="footer__menu">
+              <li itemprop="name" class="footer__item">
+                <a
+                  itemprop="url"
+                  href="/"
+                  aria-label="Home"
+                  class="footer__link"
+                  title="Return to homepage"
+                  >Home</a
+                >
+              </li>
+              <li itemprop="name" class="footer__item">
+                <a
+                  itemprop="url"
+                  href="/about"
+                  aria-label="About Us"
+                  class="footer__link"
+                  title="Learn about our company"
+                  >About Us</a
+                >
+              </li>
+              <li itemprop="name" class="footer__item">
+                <a
+                  itemprop="url"
+                  href="/contact"
+                  aria-label="Contact Us"
+                  class="footer__link"
+                  title="Get in touch with us"
+                  >Contact Us</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="footer__col">
+            <h5 class="footer__title">Manage your Account</h5>
+            <ul class="footer__menu">
+              <li itemprop="name" class="footer__item">
+                <a
+                  itemprop="url"
+                  href="/settings"
+                  aria-label="Account Settings"
+                  class="footer__link"
+                  title="Manage your account settings"
+                  >Settings</a
+                >
+              </li>
+              <li itemprop="name" class="footer__item">
+                <a
+                  itemprop="url"
+                  href="/services"
+                  class="footer__link"
+                  aria-label="Our Services"
+                  title="Explore our services"
+                  >Services</a
+                >
+              </li>
+              <li itemprop="name" class="footer__item">
+                <a
+                  itemprop="url"
+                  href="/account"
+                  aria-label="Your Account"
+                  class="footer__link"
+                  title="Manage your personal account"
+                  >Your Account</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="footer__col">
+            <h5 class="footer__title">Company</h5>
+            <ul class="footer__menu">
+              <li itemprop="name" class="footer__item">
+                <a
+                  itemprop="url"
+                  href="/projects"
+                  aria-label="Our Projects"
+                  class="footer__link"
+                  title="View our current projects"
+                  >Projects</a
+                >
+              </li>
+              <li itemprop="name" class="footer__item">
+                <a
+                  itemprop="url"
+                  href="/portfolio"
+                  aria-label="Company Portfolio"
+                  class="footer__link"
+                  title="Browse our portfolio"
+                  >Portfolio</a
+                >
+              </li>
+              <li itemprop="name" class="footer__item">
+                <a
+                  itemprop="url"
+                  href="/programs"
+                  aria-label="Company Programs"
+                  class="footer__link"
+                  title="Learn about our programs"
+                  >Programs</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="footer__col">
+            <h5 class="footer__title">Connect with us</h5>
+            <ul
+              itemscope
+              itemtype="https://schema.org/Organization"
+              class="footer__menu"
+            >
+              <li itemprop="name" class="footer__item">
+                <a
+                  itemprop="sameAs"
+                  href="https://twitter.com/example"
+                  rel="noopener noreferrer"
+                  aria-label="Twitter profile"
+                  class="footer__link"
+                  title="Follow us on Twitter"
+                  >Twitter</a
+                >
+              </li>
+              <li itemprop="name" class="footer__item">
+                <a
+                  itemprop="sameAs"
+                  href="https://linkedin.com/company/example"
+                  rel="noopener noreferrer"
+                  aria-label="LinkedIn profile"
+                  class="footer__link"
+                  title="Connect with us on LinkedIn"
+                  >Linkedin</a
+                >
+              </li>
+              <li itemprop="name" class="footer__item">
+                <a
+                  itemprop="sameAs"
+                  href="https://facebook.com/example"
+                  rel="noopener noreferrer"
+                  aria-label="Facebook page"
+                  class="footer__link"
+                  title="Like us on Facebook"
+                  >Facebook</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- -------------------------------- -->
+        <!-- Footer: Second-Row -->
+
+        <div class="footer__second-row">
+          <div class="footer__content">
+            <p itemprop="copyrightNotice" class="copyright">
+              Copyright &copy;
+              <span id="currentYear"></span
+              ><span
+                itemscope
+                itemtype="https://schema.org/Organization"
+                itemprop="copyrightHolder"
+              >
+                <span itemprop="name">Food Delivery.com</span></span
+              >
+              | All Rights Reserved
+            </p>
+          </div>
+          <ul class="footer__menu">
+            <li itemprop="name" class="footer__item">
+              <a
+                itemprop="url"
+                href="/privacy.html"
+                aria-label="Privacy Policy"
+                class="footer__link"
+                title="Read our privacy policy"
+                >Privacy Policy</a
+              >
+            </li>
+            <li itemprop="name" class="footer__item">
+              <a
+                itemprop="url"
+                href="/terms"
+                aria-label="Terms and Conditions"
+                class="footer__link"
+                title="Review our terms and conditions"
+                >Terms & Conditions</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Footer End -->
+    <!-- -------------------------------- -->
+  </body>
+  <script>
+    // --------------------------------
+    // Contact Form Handler Start
+
+    const contactForm = document.getElementById(`contactForm`);
+    const successMsg = document.getElementById(`successMsg`);
+    const errorMsg = document.getElementById(`errorMsg`);
+
+    contactForm.addEventListener(`submit`, (event) => {
+      event.preventDefault();
+
+      // Get form values
+      const formData = {
+        name: document.getElementById(`name`).value,
+        email: document.getElementById(`email`).value,
+        phone: document.getElementById(`phone`).value,
+        subject: document.getElementById(`subject`).value,
+        message: document.getElementById(`message`).value,
+      };
+
+      // Validate email format
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(formData.email)) {
+        showError();
+        return;
+      }
+
+      // Show success message
+      showSuccess();
+
+      // Reset form
+      contactForm.reset();
+
+      // Hide messages after 5 seconds
+      setTimeout(() => {
+        successMsg.style.display = `none`;
+        errorMsg.style.display = `none`;
+      }, 5000);
+
+      // In a real application, you would send this data to a server
+      console.log(`Contact Form Data:`, formData);
+    });
+
+    const showSuccess = () => {
+      successMsg.style.display = `block`;
+      errorMsg.style.display = `none`;
+    };
+
+    const showError = () => {
+      errorMsg.style.display = `block`;
+      successMsg.style.display = `none`;
+    };
+
+    // Contact Form Handler End
+    // --------------------------------
+  </script>
+</html>

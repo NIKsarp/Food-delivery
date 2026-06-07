@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="author" content="Prashant Rastogi" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>404 - Page Not Found - Food Delivery.com</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="icon"
+      href="https://cdn3d.iconscout.com/3d/premium/thumb/food-and-drink-5727926-4800418.png?f=webp"
+      type="image/x-icon"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      .error__container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: calc(100vh - 200px);
+        text-align: center;
+        gap: 2rem;
+      }
+
+      .error__code {
+        font-size: clamp(4rem, 15vw, 8rem);
+        font-weight: 900;
+        background: linear-gradient(to right, yellow, orange);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        animation: bounce 2s ease-in-out infinite;
+      }
+
+      @keyframes bounce {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-20px);
+        }
+      }
+
+      .error__title {
+        font-size: clamp(1.75rem, 5vw, 3rem);
+        color: var(--white);
+        margin: 0;
+      }
+
+      .error__message {
+        font-size: clamp(1rem, 2vw, 1.25rem);
+        color: var(--black);
+        max-width: 500px;
+        line-height: 1.8;
+      }
+
+      .error__box {
+        background-color: #fffffe40;
+        border-top: 3px solid #ffffff30;
+        border-left: 3px solid #ffffff30;
+        backdrop-filter: blur(1rem) saturate(180%);
+        border-radius: 1rem;
+        padding: clamp(1.5rem, 4vw, 2.5rem);
+        max-width: 600px;
+        width: 100%;
+      }
+
+      .error__icon {
+        font-size: 5rem;
+        animation: rotate 3s linear infinite;
+      }
+
+      @keyframes rotate {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      .error__btn-group {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        width: 100%;
+      }
+
+      @media only screen and (min-width: 600px) {
+        .error__btn-group {
+          flex-direction: row;
+          justify-content: center;
+        }
+      }
+
+      .error__btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem 2rem;
+        border: none;
+        border-radius: 0.5rem;
+        cursor: pointer;
+        font-weight: 700;
+        font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+        transition: all 0.3s ease;
+        text-decoration: none;
+        flex: 1;
+        max-width: 250px;
+      }
+
+      .error__btn--primary {
+        background-image: linear-gradient(to top left, yellow, orange);
+        color: var(--black);
+      }
+
+      .error__btn--primary:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(255, 94, 7, 0.4);
+      }
+
+      .error__btn--secondary {
+        background-color: #ffffff20;
+        color: var(--white);
+        border: 2px solid var(--white);
+      }
+
+      .error__btn--secondary:hover {
+        background-color: #ffffff40;
+        transform: translateY(-3px);
+      }
+
+      .error__timer {
+        font-size: 1rem;
+        color: var(--black);
+        margin-top: 1rem;
+      }
+
+      .error__timer strong {
+        color: #ff6b35;
+        font-weight: 700;
+      }
+
+      .error__suggestions {
+        background-color: #ffffff10;
+        border-left: 4px solid orange;
+        border-radius: 0.5rem;
+        padding: 1.5rem;
+        margin-top: 2rem;
+        text-align: left;
+        max-width: 600px;
+      }
+
+      .error__suggestions h4 {
+        color: var(--white);
+        margin-bottom: 1rem;
+      }
+
+      .error__suggestions ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      .error__suggestions li {
+        color: var(--black);
+        padding: 0.5rem 0;
+        margin-left: 2rem;
+      }
+
+      .error__suggestions li:before {
+        content: "→ ";
+        color: orange;
+        font-weight: 700;
+        margin-left: -1.5rem;
+        margin-right: 0.5rem;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- -------------------------------- -->
+    <!-- Header Start -->
+    <header
+      itemscope
+      itemtype="https://schema.org/WPHeader"
+      role="banner"
+      class="header"
+    >
+      <div
+        itemscope
+        itemtype="https://schema.org/Organization"
+        class="header__navbar-brand"
+      >
+        <div class="figure">
+          <img
+            src="https://cdn3d.iconscout.com/3d/premium/thumb/fast-food-shop-8394648-6666271.png"
+            alt="header__logo"
+          />
+        </div>
+        <a href="index.html" class="header__logo" style="cursor: pointer"
+          >Food Delivery.com</a
+        >
+      </div>
+    </header>
+
+    <!-- Header End -->
+    <!-- -------------------------------- -->
+    <!-- 404 Error Section Start -->
+
+    <section class="block">
+      <div class="error__container">
+        <div class="error__icon">🍕</div>
+
+        <div class="error__code">404</div>
+
+        <h1 class="error__title">Page Not <span class="design">Found</span></h1>
+
+        <div class="error__box">
+          <p class="error__message">
+            Oops! The page you're looking for seems to have been delivered to
+            the wrong address. Let's get you back on track!
+          </p>
+
+          <div class="error__btn-group">
+            <button onclick="goHome()" class="error__btn error__btn--primary">
+              🏠 Back to Home
+            </button>
+            <button onclick="goBack()" class="error__btn error__btn--secondary">
+              ← Go Back
+            </button>
+          </div>
+
+          <div class="error__timer">
+            Auto-redirecting to home in
+            <strong id="countdownTimer">10</strong> seconds...
+          </div>
+        </div>
+
+        <div class="error__suggestions">
+          <h4>Here's what you can try:</h4>
+          <ul>
+            <li>Check the URL in your address bar</li>
+            <li>Return to the home page</li>
+            <li>Use the navigation menu above</li>
+            <li>Contact our support team if the problem persists</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 404 Error Section End -->
+    <!-- -------------------------------- -->
+  </body>
+
+  <script>
+    // --------------------------------
+    // 404 Error Page Handler Start
+
+    let countdown = 10;
+    const countdownTimer = document.getElementById(`countdownTimer`);
+
+    const goHome = () => {
+      window.location.href = `index.html`;
+    };
+
+    const goBack = () => {
+      window.history.back();
+    };
+
+    const startCountdown = () => {
+      const interval = setInterval(() => {
+        countdown--;
+        countdownTimer.textContent = countdown;
+
+        if (countdown <= 0) {
+          clearInterval(interval);
+          goHome();
+        }
+      }, 1000);
+    };
+
+    // Start countdown on page load
+    startCountdown();
+
+    // Also allow keyboard shortcuts
+    document.addEventListener(`keydown`, (event) => {
+      if (event.key === `Enter`) {
+        goHome();
+      }
+      if (event.key === `Escape`) {
+        goBack();
+      }
+    });
+
+    // 404 Error Page Handler End
+    // --------------------------------
+  </script>
+</html>

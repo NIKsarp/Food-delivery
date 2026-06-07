@@ -219,3 +219,49 @@ createFAQ(
 
 // FAQ-group End
 // --------------------------------
+
+// // List your valid routes
+// const validRoutes = [
+//   "/",
+//   "/index.html",
+//   // "/services",
+//   "/contact.html",
+//   "/privacy.html",
+//   // "/terms",
+//   // "/settings",
+//   // "/account",
+//   // "/projects",
+//   // "/portfolio",
+//   // "/programs",
+// ];
+
+// // Check if the current path is in the valid list
+// const currentPath = window.location.pathname;
+
+// if (!validRoutes.includes(currentPath) && currentPath !== "/404.html") {
+//   // Redirect to your custom 404 page
+//   window.location.href = "/404.html";
+// }
+
+// // index.js
+// const validRoutes = [
+//   "/",
+//   "/index.html",
+//   // "/services",
+//   "/contact.html",
+//   "/privacy.html",
+//   // "/terms",
+//   // "/settings",
+//   // "/account",
+//   // "/projects",
+//   // "/portfolio",
+//   // "/programs",
+// ];
+
+// // Use window.location.pathname to get the current route
+// const path = window.location.pathname;
+
+// // Check if the current page is NOT in the list and NOT the 404 page
+// if (!validRoutes.includes(path) && !path.includes("404.html")) {
+//   window.location.replace("/404.html");
+// }
